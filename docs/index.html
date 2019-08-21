@@ -19,7 +19,7 @@
                     <p>
                         <span>コマンド:</span>
                         <div>
-                            <textarea v-model="result" rows="4" cols="60"></textarea>
+                            <textarea ref="command" v-model="result" @click="$refs.command.select()" rows="4" cols="60"></textarea>
                         </div>
                         <button v-if="supportsCB" @click="copy_to_cb">Copy</button>
                     </p>
