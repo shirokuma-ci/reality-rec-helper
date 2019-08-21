@@ -8,8 +8,8 @@
         <h1>Reality recording helper</h1>
         <div id="app" v-cloak>
             <div>
-              <p>URL or ID:</p>
-              <input type="text" id="param" v-model="param" size="60">
+              <p>URL または ID:</p>
+              <input type="text" id="param" v-model="param" placeholder="URL または ID" size="60">
             </div>
             <p class="btn">
                 <a href="#" v-on:click="get_strem_url">録画用コマンドを取得</a>
@@ -19,7 +19,7 @@
                     <p>
                         <span>コマンド:</span>
                         <div>
-                            <textarea rows="4" cols="60">{{ result }}</textarea>
+                            <textarea v-model="result" rows="4" cols="60"></textarea>
                         </div>
                     </p>
                 </div>
