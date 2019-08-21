@@ -12,7 +12,7 @@
               <input type="text" id="param" v-model="param" placeholder="URL または ID" size="60">
             </div>
             <p class="btn">
-                <a href="#" v-on:click="get_strem_url">録画用コマンドを取得</a>
+                <a href="#" @click="get_strem_url">録画用コマンドを取得</a>
             </p>
             <div v-show="success">
                 <div>
@@ -21,6 +21,7 @@
                         <div>
                             <textarea v-model="result" rows="4" cols="60"></textarea>
                         </div>
+                        <button v-if="supportsCB" @click="copy_to_cb">Copy</button>
                     </p>
                 </div>
                 <div>

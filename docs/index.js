@@ -18,6 +18,12 @@ var app = new Vue({
         name: "",
         title: "",
         thumb_src: "",
+        supportsCB: true,
+    },
+    created: function() {
+        if(navigator.clipboard) {
+            supportsCB = true;
+        }
     },
     methods:{
         get_strem_url: async function(){
@@ -50,6 +56,15 @@ var app = new Vue({
                 this.success = false;
                 this.error = true;
             }
+        },
+        copy_to_cb: function(){
+            navigator.clipboard.writeText(this.result)
+                .then(() => {
+                    console.log('command is on the clipboard.');
+                })
+                .catch(e => {
+                    console.error(e);
+                });
         }
     }
     })
