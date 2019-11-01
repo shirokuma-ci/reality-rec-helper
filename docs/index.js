@@ -24,7 +24,7 @@ var app = new Vue({
         supportsCB: true,
     },
     created: function() {
-        if(navigator.clipboard) {
+        if(document.execCommand) {
             supportsCB = true;
         }
     },
@@ -63,7 +63,8 @@ var app = new Vue({
             }
         },
         copy_to_cb: function(){
-            navigator.clipboard.writeText(this.result)
+            this.$refs.command.select();
+            document.execCommand('copy')
                 .then(() => {
                     console.log('command is on the clipboard.');
                 })
