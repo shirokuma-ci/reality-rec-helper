@@ -1,8 +1,11 @@
-html, body {
+html {
     margin: 0;
     padding: 10px;
     height: 100vh;
     background: linear-gradient(135deg, #5CB2F3, #BD52CA);
+}
+body {
+  padding: 10px;
 }
 [v-cloak] {
     display: none;
