@@ -64,13 +64,7 @@ var app = new Vue({
         },
         copy_to_cb: function(){
             this.$refs.command.select();
-            document.execCommand('copy')
-                .then(() => {
-                    console.log('command is on the clipboard.');
-                })
-                .catch(e => {
-                    console.error(e);
-                });
+            document.execCommand('copy');
         }
     }
     })
