@@ -15,6 +15,7 @@ var app = new Vue({
         success: false,
         error: false,
         result: "",
+        stream_url: "",
         name: "",
         title: "",
         thumb_src: "",
@@ -48,6 +49,7 @@ var app = new Vue({
                 this.thumb_src = json['payload']['thumbnail'];
                 console.log(endpoint_url);
                 this.result = command;
+                this.stream_url = endpoint_url;
                 this.success = true;
                 this.error = false;
             } else {

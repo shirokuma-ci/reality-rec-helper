@@ -34,6 +34,14 @@
                     </p>
                 </div>
                 <div>
+                    <p>
+                        <span>ストリームURL:</span>
+                        <div>
+                            <textarea ref="command" v-model="stream_url" @click="$refs.command.select()" rows="4" cols="60"></textarea>
+                        </div>
+                    </p>
+                </div>
+                <div>
                     <p class="thumbnail"><img :src="thumb_src" alt="thumbnail"></p>
                     <p><span>配信者: </span><span>{{ name }}</span></p>
                     <p><span>タイトル: </span><span>{{ title }}</span></p>
