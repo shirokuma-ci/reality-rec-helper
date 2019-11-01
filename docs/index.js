@@ -3,6 +3,7 @@
  */
 
 const API_URL = "https://media-prod-dot-vlive-prod.appspot.com/api/v1/media/get";
+const VIEWER_URL = "https://reality.wrightflyer.net/viewer/";
 const ID_REGEX = /\d+$/;
 const CMD_PREFIX = "ffmpeg -fflags +igndts -i ";
 const CMD_POSTFIX = " -c copy ";
@@ -19,6 +20,7 @@ var app = new Vue({
         name: "",
         title: "",
         thumb_src: "",
+        viewer_url: "",
         supportsCB: true,
     },
     created: function() {
@@ -50,6 +52,7 @@ var app = new Vue({
                 console.log(endpoint_url);
                 this.result = command;
                 this.stream_url = endpoint_url;
+                this.viewer_url = VIEWER_URL + id;
                 this.success = true;
                 this.error = false;
             } else {
