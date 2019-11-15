@@ -5,8 +5,8 @@
 const API_URL = "https://media-prod-dot-vlive-prod.appspot.com/api/v1/media/get";
 const VIEWER_URL = "https://reality.wrightflyer.net/viewer/";
 const ID_REGEX = /\d+$/;
-const CMD_PREFIX = "ffmpeg -fflags +igndts -i ";
-const CMD_POSTFIX = " -c copy ";
+const CMD_PREFIX = "streamlink ";
+const CMD_POSTFIX = " --default-stream best -o - | ffmpeg -i - -movflags faststart -c copy -bsf:a aac_adtstoasc ";
 const EXT = ".ts";
 
 var app = new Vue({
