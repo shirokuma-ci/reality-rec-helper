@@ -33,7 +33,12 @@ var app = new Vue({
             var term = this.param;
             if (this.lives) {
                 if(term) {
-                    this.filtered_lives = this.lives.filter(function(i){return i.OwnerStreamer.nickname.toLowerCase().includes(term.toLowerCase());});
+                    this.filtered_lives = this.lives.filter(
+                            function(i){
+                                return i.OwnerStreamer.nickname.toLowerCase().includes(term.toLowerCase())
+                                    || i.title.toLowerCase().includes(term.toLowerCase());
+                            }
+                        );
                 } else {
                     this.filtered_lives = this.lives;
                 }
