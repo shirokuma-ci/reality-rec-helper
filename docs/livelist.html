@@ -1,0 +1,44 @@
+<html lang="ja">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146373006-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-146373006-1');
+        </script>
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="livelist.css">
+    </head>
+
+    <body>
+        <h1>Reality Lives</h1>
+        <div id="app" v-cloak>
+            <div>
+                <form @submit.prevent="search">
+                    <input type="text" id="param" v-model="param" placeholder="Name" size="60">
+                    <button>検索</button>
+                    <button @click="clear">クリア</button>
+                </form>
+            </div>
+            <ul class="block-grid block-grid-1-2-3">
+            <li v-for="live in filtered_lives">
+                <a v-bind:href="'https://reality.wrightflyer.net/viewer/' + live.media_id" target="_blank">
+                    <span class="live_item">
+                        <img class="thumbnail" :src="live.thumbnail" alt="thumbnail">
+                        <p><span>{{ live.title }}</span><br/><span class="nickname">{{ live.OwnerStreamer.nickname }}</span></p>
+                    </span>
+                </a>
+            </li>
+            </ul>
+            <div v-show="error">
+                <p>Error!</p>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+        <script src="./livelist.js"> </script>
+      </body>
+</html>
