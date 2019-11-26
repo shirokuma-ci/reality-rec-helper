@@ -24,16 +24,16 @@
                     <button @click="clear">クリア</button>
                 </form>
             </div>
-            <ul class="block-grid block-grid-1-2-3">
-                <li v-for="live in filtered_lives">
+            <div class="container">
+                <div class="grid" v-for="live in filtered_lives">
                     <a v-bind:href="'https://reality.wrightflyer.net/viewer/' + live.media_id" target="_blank">
                         <span class="live_item">
                             <img class="thumbnail" :src="live.thumbnail" alt="thumbnail">
                             <p><span class="title">{{ live.title.substring(0,24) }}</span><br/><span class="nickname">{{ live.OwnerStreamer.nickname.substring(0,17) }}</span></p>
                         </span>
                     </a>
-                </li>
-            </ul>
+                </div>
+            </div>
             <div v-show="error">
                 <p>Error!</p>
             </div>
