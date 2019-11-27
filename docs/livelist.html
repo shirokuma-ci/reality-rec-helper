@@ -26,7 +26,7 @@
             </div>
             <div class="container">
                 <div class="grid" v-for="live in filtered_lives">
-                    <a v-bind:href="'https://reality.wrightflyer.net/viewer/' + live.media_id" target="_blank">
+                    <a v-bind:href="'https://reality.wrightflyer.net/viewer/' + live.media_id" target="_blank" rel="noopener noreferrer">
                         <span class="live_item">
                             <img class="thumbnail" :src="live.thumbnail" alt="thumbnail">
                             <p><span class="title">{{ live.title.substring(0,24) }}</span><br/><span class="nickname">{{ live.OwnerStreamer.nickname.substring(0,17) }}</span></p>
