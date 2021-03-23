@@ -2,7 +2,7 @@
  * Reality lives ver.0.0.1
  */
 
-const API_URL = "https://media-prod-dot-vlive-prod.appspot.com/api/v1/media/lives_user";
+const API_URL = "https://media.reality.app/api/v1/media/lives_user";
 
 var app = new Vue({
     el:"#app", 
