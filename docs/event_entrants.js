@@ -25,6 +25,7 @@
             if (!this.event_id) {
                 return;
             }
+            this.resetData();
 
             page = 1;
             do {
