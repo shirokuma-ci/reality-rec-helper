@@ -12,6 +12,7 @@
          title: "",
          header_img: "",
          event_page: "",
+         loaded: false,
          success: false,
          error: false,
          entrants: [],
@@ -48,13 +49,14 @@
                     break;
                 }
             } while (page > 0)
-
+            this.loaded = true;
             console.log("Load");
          },
          resetData: function() {
             this.title = "";
             this.header_img = "";
             this.entrants = [];
+            this.loaded = false;
          },
          clear: function() {
             this.event_id = "";
