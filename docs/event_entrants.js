@@ -7,7 +7,7 @@
  var app = new Vue({
      el:"#app", 
      data:{
-         event_id: "2193",
+         event_id: "",
          profile_url_base: "https://reality.app/profile/",
          title: "",
          header_img: "",
@@ -21,8 +21,11 @@
      },
      methods:{
          getEntrants: async function() {
+            if (!this.event_id) {
+                return;
+            }
+
             page = 1;
-            
             do {
                 let res = await fetch(API_URL, {
                     "headers": {
